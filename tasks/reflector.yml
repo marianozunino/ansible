@@ -1,0 +1,27 @@
+# REFLECTOR TO REGULARLY UPDATE MIRRORLIST  ---- CHANGE COUNTRY CODES !!! ----
+- name: install reflector
+  pacman:
+    name:
+      - reflector
+
+- name: write reflector configuration file
+  copy:
+    dest: '/etc/xdg/reflector/reflector.conf'
+    content: |
+      --save /etc/pacman.d/mirrorlist
+      --protocol http
+      --country CL,AR
+      --score 20
+      --sort rate
+
+- name: enable and start reflector timer
+  systemd:
+    name: reflector.timer
+    enabled: yes
+    state: started
+
+- name: do initial run of reflector.service
+  systemd:
+    name: reflector
+    enabled: yes
+    state: started

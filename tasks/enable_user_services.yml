@@ -1,0 +1,8 @@
+- name: Enable User Services
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+    scope: user
+  with_items:
+    - syncthing

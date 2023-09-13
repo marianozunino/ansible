@@ -1,0 +1,21 @@
+- name: Configure Pacman
+  become: true
+  ansible.builtin.copy:
+    src: pacman.conf
+    dest: /etc/pacman.conf
+
+
+- name: Makepkg - disable compression
+  become: true
+  lineinfile:
+    path: /etc/makepkg.conf
+    regexp: "PKGEXT='.pkg.tar.zst'"
+    line: "PKGEXT='.pkg.tar'"
+
+- name: Makepkg - disable debug mode
+  become: true
+  lineinfile:
+    path: /etc/makepkg.conf
+    regexp: "^OPTIONS=*"
+    line: "OPTIONS=(strip docs !libtool !staticlibs emptydirs zipman purge debug lto !debug)"
+

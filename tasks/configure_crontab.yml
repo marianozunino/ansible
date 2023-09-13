@@ -1,0 +1,19 @@
+- name: Brog crontab
+  ansible.builtin.cron:
+    name: "Borg Backup"
+    hour: "*/2"
+    minute: "0"
+    user: "{{ ansible_user }}"
+    job: "/home/{{ ansible_user }}/.bin/borg-backup.sh"
+
+- name: archlinux-keyring - enable weekly update
+  systemd:
+    name: archlinux-keyring-wkd-sync.timer
+    enabled: yes
+    state: started
+
+- name: enable and start weekly ssd disks trim using fstrim timer
+  systemd:
+    name: fstrim.timer
+    enabled: yes
+    state: started

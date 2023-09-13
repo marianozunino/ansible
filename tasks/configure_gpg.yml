@@ -1,0 +1,18 @@
+- name: Download GPG Key using YubiKey
+  ansible.builtin.shell: |
+    echo -e "fetch\nquit\n" | gpg --command-fd 0 --edit-card
+    echo -e "trust\n5\ny\n" | gpg --command-fd 0 --edit-key marianoz@posteo.net
+
+- name: Configure GPG Agent
+  ansible.builtin.copy:
+    content: |
+      enable-ssh-support
+      pinentry-program /usr/bin/pinentry-gnome
+    dest: "/{{ ansible_user }}/.gnupg/gpg-agent.conf"
+
+- name: Set Pin Entry Program in GPG Agent
+  ansible.builtin.copy:
+    content: |
+      enable-ssh-support
+      pinentry-program /usr/bin/pinentry-gtk
+    dest: "/{{ ansible_user }}/.gnupg/gpg-agent.conf"

@@ -1,0 +1,4 @@
+- name: set default shell
+  become: true
+  ansible.builtin.shell: chsh -s /usr/bin/zsh {{ ansible_user }}
+  tags: [dotfiles, all]

@@ -1,0 +1,17 @@
+# LOGROTATE  -----------------------------------------------------------------
+- name: install logrotate
+  pacman:
+    name:
+      - logrotate
+
+- name: logrotate - enable compression
+  lineinfile:
+    path: /etc/logrotate.conf
+    regexp: '^#compress$'
+    line: 'compress'
+
+- name: enable and start daily logs rotation, cleanup
+  systemd:
+    name: logrotate.timer
+    enabled: yes
+    state: started

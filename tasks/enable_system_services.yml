@@ -1,0 +1,11 @@
+- name: Enable System Services
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  with_items:
+    - sshd
+    - docker
+    - cronie
+    - pcscd

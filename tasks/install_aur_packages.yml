@@ -1,0 +1,6 @@
+- name: Install AUR packages with yay
+  kewlfft.aur.aur:
+    name: "{{ item }}"
+    state: present
+    use: paru
+  with_items: "{{ aur_packages }}"

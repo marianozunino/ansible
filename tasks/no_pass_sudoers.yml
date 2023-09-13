@@ -1,0 +1,7 @@
+- name: Make the wheel group not require a password
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    regexp: "^%wheel"
+    line: "%wheel ALL=(ALL) NOPASSWD: ALL"
+

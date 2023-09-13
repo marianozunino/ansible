@@ -1,0 +1,9 @@
+- name: Clone Paru from GitHub
+  ansible.builtin.git:
+    repo: https://aur.archlinux.org/paru-bin.git
+    dest: /tmp/paru
+
+- name: Install Paru
+  ansible.builtin.shell: makepkg -si --noconfirm
+  args:
+    chdir: /tmp/paru

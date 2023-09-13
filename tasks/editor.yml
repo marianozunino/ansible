@@ -1,0 +1,6 @@
+- name: set default editor in global /etc/profile
+  blockinfile:
+    path: /etc/profile
+    block: |
+      export EDITOR=nvim
+      export VISUAL=nvim

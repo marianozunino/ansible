@@ -1,0 +1,67 @@
+---
+- name: Configure and Install Software
+  hosts: localhost
+  vars_files:
+    - vars/pkgs.yml
+  vars_prompt:
+    - name: ansible_user
+      prompt: What is your username?
+      private: false
+  tasks:
+    - import_tasks: ./tasks/add_use_to_group.yml
+      tags: [groups,sudoers, all]
+
+    - import_tasks: ./tasks/no_pass_sudoers.yml
+      tags: [sudoers, all]
+
+    - import_tasks: ./tasks/set_timezone.yml
+      tags: [timezone, all]
+
+    - import_tasks: ./tasks/update_pacman.yml
+      tags: [pacman, all]
+
+    - import_tasks: ./tasks/configure_pacman.yml
+      tags: [pacman, all]
+
+    - import_tasks: ./tasks/install_pacman_packages.yml
+      tags: [pacman, all]
+
+    - import_tasks: ./tasks/install_git.yml
+      tags: [git, paru, all]
+
+    - import_tasks: ./tasks/install_paru.yml
+      tags: [git, paru, all]
+
+    - import_tasks: ./tasks/install_aur_packages.yml
+      tags: [aur, paru, all]
+
+    - import_tasks: ./tasks/configure_gpg.yml
+      tags: [gpg, all]
+
+    - import_tasks: ./tasks/enable_system_services.yml
+      tags: [services, all]
+
+    - import_tasks: ./tasks/enable_user_services.yml
+      tags: [services, all]
+
+    - import_tasks: ./tasks/set_zsh_as_default_shell.yml
+      tags: [shell, all]
+
+    - import_tasks: ./tasks/configure_crontab.yml
+      tags: [cron, all]
+
+    - import_tasks: ./tasks/reflector.yml
+      become: true
+      tags: [reflector, all]
+
+    - import_tasks: ./tasks/logrotate.yml
+      become: true
+      tags: [logrotate, all]
+
+    - import_tasks: ./tasks/editor.yml
+      become: true
+      tags: [editor, all]
+
+    - import_tasks: ./tasks/docker.yml
+      become: true
+      tags: [docker, all]

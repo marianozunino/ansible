@@ -1,0 +1,6 @@
+- name: Add forbi user to groups
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: wheel,video,audio,storage,power,network,sys
+    append: true

@@ -1,0 +1,4 @@
+- name: Set timezone
+  become: true
+  ansible.builtin.timezone:
+    name: America/Montevideo
