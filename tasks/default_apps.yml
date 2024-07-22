@@ -1,0 +1,17 @@
+- name: Default PDF Viewer
+  ansible.builtin.shell: |
+    xdg-mime default org.pwmt.zathura.desktop application/pdf
+
+- name: Default Text Editor
+  ansible.builtin.shell: |
+    xdg-mime default custom-nvim.desktop text/plain
+    xdg-mime default custom-nvim.desktop text/x-shellscript
+    xdg-mime default custom-nvim.desktop text/x-vimrc
+    xdg-mime default custom-nvim.desktop application/json
+
+- name: Default File Explorer
+  ansible.builtin.shell: |
+    xdg-mime default thunar.desktop inode/directory
+
+
+

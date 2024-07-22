@@ -5,6 +5,7 @@
       - docker
       - docker-compose
       - ctop
+      - docker-buildx
 
 - name: enable and start docker.service
   systemd:

@@ -1,4 +1,8 @@
 pacman_packages:
+  - lazygit
+  - ttf-fira-sans
+  - ttf-fira-mono
+  - glow # pretty bash interfaces
   - duf # prettier df
   - bat # prettier cat
   - util-linux
