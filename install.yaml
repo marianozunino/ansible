@@ -68,3 +68,6 @@
 
     - import_tasks: ./tasks/default_apps.yml
       tags: [apps, all]
+
+    - import_tasks: ./tasks/slides.yml
+      tags: [slides, all]

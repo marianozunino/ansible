@@ -1,0 +1,13 @@
+- name: Create Python virtual environment for user
+  ansible.builtin.shell: |
+    python3 -m venv /home/{{ ansible_user }}/.local/share/venv
+
+- name: Install Presenter Export
+  ansible.builtin.shell: |
+    source /home/{{ ansible_user }}/.local/share/venv/bin/activate
+    pip install presenterm-export
+
+- name: Install Presenter
+  ansible.builtin.shell: |
+    cargo install --git https://github.com/mfontanini/presenterm
+
