@@ -8,11 +8,11 @@
     content: |
       enable-ssh-support
       pinentry-program /usr/bin/pinentry-gnome
-    dest: "/{{ ansible_user }}/.gnupg/gpg-agent.conf"
+    dest: "/home/{{ ansible_user }}/.gnupg/gpg-agent.conf"
 
 - name: Set Pin Entry Program in GPG Agent
   ansible.builtin.copy:
     content: |
       enable-ssh-support
       pinentry-program /usr/bin/pinentry-gtk
-    dest: "/{{ ansible_user }}/.gnupg/gpg-agent.conf"
+    dest: "/home/{{ ansible_user }}/.gnupg/gpg-agent.conf"
