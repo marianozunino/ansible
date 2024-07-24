@@ -1,4 +1,5 @@
 pacman_packages:
+  - yazi # ranger but in rust
   - lazygit
   - ttf-fira-sans
   - ttf-fira-mono
