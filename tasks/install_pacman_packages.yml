@@ -1,5 +1,23 @@
-- name: Install packages
+- name: Install Font packages
   become: true
   pacman:
     update_cache: yes
-    name: "{{ pacman_packages }}"
+    name: "{{ font_packages }}"
+
+- name: Install Dev packages
+  become: true
+  pacman:
+    update_cache: yes
+    name: "{{ dev_packages }}"
+
+- name: Install Base packages
+  become: true
+  pacman:
+    update_cache: yes
+    name: "{{ base_packages }}"
+
+- name: Install Gaming packages
+  become: true
+  pacman:
+    update_cache: yes
+    name: "{{ gaming_packages }}"

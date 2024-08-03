@@ -12,6 +12,7 @@
     enabled: yes
     state: started
 
+
 - name: enable and start weekly ssd disks trim using fstrim timer
   systemd:
     name: fstrim.timer

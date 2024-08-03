@@ -14,9 +14,6 @@
     - import_tasks: ./tasks/no_pass_sudoers.yml
       tags: [sudoers, all]
 
-    - import_tasks: ./tasks/set_timezone.yml
-      tags: [timezone, all]
-
     - import_tasks: ./tasks/update_pacman.yml
       tags: [pacman, all]
 
@@ -24,7 +21,7 @@
       tags: [pacman, all]
 
     - import_tasks: ./tasks/install_pacman_packages.yml
-      tags: [pacman, all]
+      tags: [install,pacman, all]
 
     - import_tasks: ./tasks/install_git.yml
       tags: [git, paru, all]
@@ -33,7 +30,7 @@
       tags: [git, paru, all]
 
     - import_tasks: ./tasks/install_aur_packages.yml
-      tags: [aur, paru, all]
+      tags: [install, aur, paru, all]
 
     - import_tasks: ./tasks/configure_gpg.yml
       tags: [gpg, all]
@@ -44,10 +41,11 @@
     - import_tasks: ./tasks/enable_user_services.yml
       tags: [services, all]
 
-    - import_tasks: ./tasks/set_zsh_as_default_shell.yml
-      tags: [shell, all]
+    # - import_tasks: ./tasks/set_zsh_as_default_shell.yml
+    #   tags: [shell, all]
 
     - import_tasks: ./tasks/configure_crontab.yml
+      become: true
       tags: [cron, all]
 
     - import_tasks: ./tasks/reflector.yml
@@ -71,3 +69,10 @@
 
     - import_tasks: ./tasks/slides.yml
       tags: [slides, all]
+
+    - import_tasks: ./tasks/set_timezone.yml
+      tags: [tz, all]
+
+    - import_tasks: ./tasks/install_gaming_packages.yml
+      tags: [gaming, all]
+

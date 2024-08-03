@@ -1,82 +1,108 @@
-pacman_packages:
-  - yazi # ranger but in rust
-  - lazygit
+gaming_packages:
+  - lutris
+  - lib32-vkd3d
+  - lib32-vulkan-icd-loader
+  - lib32-gamemode
+  - vulkan-icd-loader
+  - vulkan-tools
+  - python-protobuf # battle.net support
+  - calf
+
+font_packages:
   - ttf-fira-sans
   - ttf-fira-mono
+  - ttf-dejavu
+  - noto-fonts-emoji
+  - ttf-fira-code
+
+dev_packages:
+  - wezterm
+  - python-neovim
+  - neovim
+  - tmux
+  - cargo
+  - go
+  - npm
+  - helm
+  - kubectl
+  - kubectx
+  - kubens
+  - jq
+  - lazygit
+  - github-cli
+  - git
+  - aws-cli
+  - the_silver_searcher
+  - cmake
+  - fzf
+  - inetutils
+  - inotify-tools
+  - python
+  - ripgrep
+
+base_packages:
+  - base
+  - base-devel
+  - linux
+  - linux-firmware
+  - man-db
+  - sudo
+  - booster
+  - lvm2
+  - libfido2 # needed for systemd-cryptenroll --fido2-device=auto
+  - busybox #
+  - btop
+  - zsh
+  - yazi # ranger but in rust
   - glow # pretty bash interfaces
   - duf # prettier df
   - bat # prettier cat
+  - eza # prettier ls
   - util-linux
-  - libfido2 # needed for systemd-cryptenroll --fido2-device=auto
   - cups
   - system-config-printer
   - vi
-  - ranger
-  - eza
   - aspell
   - aspell-en
   - aspell-es
-  - github-cli
-  - aws-cli
   - xdg-desktop-portal-gtk
-  - grim
-  - slurp
-  - swappy
+  - grim # screenshot
+  - slurp # screenshot
   - parallel
   - cronie
   - borg
   - acpi
   - amd-ucode
-  - base
-  - base-devel
   - bash-completion
   - blueman
   - brightnessctl
-  - calf
-  - cmake
   - dunst
-  - easyeffects
   - fd
-  - feh
   - file-roller
-  - fzf
-  - git
-  - inetutils
-  - inotify-tools
   - inter-font
   - less
   - libnotify
-  - linux
-  - linux-firmware
-  - lsp-plugins
-  - man-db
   - network-manager-applet
   - networkmanager
   - ntfs-3g
   - openssh
   - papirus-icon-theme
-  - pavucontrol
   - gvfs-google
   - gvfs
   - dbus-glib
   - mailcap
-  - tumbler
   - thunar-volman
   - thunar-archive-plugin
   - thunar
+  - easyeffects
+  - lsp-plugins
   - pipewire
   - pipewire-docs
   - pipewire-pulse
-  - python
-  - ripgrep
+  - pavucontrol
   - seahorse
-  - sudo
   - syncthing
-  - the_silver_searcher
-  - tmux
   - transmission-qt
-  - ttf-dejavu
-  - ttf-fira-code
   - unrar
   - unzip
   - waybar
@@ -88,7 +114,6 @@ pacman_packages:
   - xorg-xwayland
   - zathura
   - zathura-pdf-mupdf
-  - zsh
   - chezmoi
   - bitwarden-cli
   - transmission-qt
@@ -96,24 +121,16 @@ pacman_packages:
   - wf-recorder
   - xdg-desktop-portal-wlr
   - xdg-desktop-portal
-  - jq
   - obs-studio
-  - lf
-  - ueberzug
   - zenity
-  - fuzzel
+  - yad
   - qt5-wayland
   - qt6-wayland
-  - swaybg
   - yubikey-manager-qt
-  - noto-fonts-emoji
-  - kubectl
-  - kubectx
-  - kubens
   - ethtool
   - gtk-engine-murrine
   - thunderbird
-  - wezterm
+  - xorg-xhost # to solve some gufw issues
 
 aur_packages:
   - otf-font-awesome-5
@@ -128,9 +145,6 @@ aur_packages:
   - vorta
   - wlogout
   - yubico-authenticator-bin
-  - pinentry-rofi
-  - flyctl-bin
-  - swaylock-effects
   - stern
   - insync
   - insync-thunar
@@ -138,7 +152,11 @@ aur_packages:
   - davmail
   - obsidian
   - swayfx
+  - swaylock-effects
+  - swaybg
   - vesktop-bin
   - paru-bin
   - rofi-lbonn-wayland-git
-
+  - sublime-merge
+  - postman-bin
+  - satty-bin # modify screenshot
