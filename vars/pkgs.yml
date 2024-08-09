@@ -91,9 +91,7 @@ base_packages:
   - gvfs
   - dbus-glib
   - mailcap
-  - thunar-volman
-  - thunar-archive-plugin
-  - thunar
+  - nemo
   - easyeffects
   - lsp-plugins
   - pipewire
@@ -131,8 +129,11 @@ base_packages:
   - gtk-engine-murrine
   - thunderbird
   - xorg-xhost # to solve some gufw issues
+  - vulkan-amd
+  - vulkan-validation-layers
 
 aur_packages:
+  - sshs-bin
   - otf-font-awesome-5
   - nwg-look
   - rose-pine-gtk-theme
@@ -146,8 +147,6 @@ aur_packages:
   - wlogout
   - yubico-authenticator-bin
   - stern
-  - insync
-  - insync-thunar
   - ngrok
   - davmail
   - obsidian
